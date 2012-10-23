@@ -1,0 +1,144 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AlarmClockWP7.PivotPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="Alarm Clock - Details" Name="DetailsPivot">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Time" IsEnabled="True" Name="TimePivotItem">
+                <Grid>
+                    <StackPanel Height="592" HorizontalAlignment="Center" Margin="10,10,0,0" Name="StackPanel1" VerticalAlignment="Top" Width="451">
+                        <Grid Height="75" Name="SaveGrid" Width="260">
+                            <Image Height="60" HorizontalAlignment="Left" Margin="0" Name="Image1" Stretch="Fill" VerticalAlignment="Stretch" Width="60" Source="/AlarmClockWP7;component/Icons/database.png" />
+                            <Button Content="Save" Height="70" HorizontalAlignment="Left" Margin="89,4,0,0" Name="SaveChangesButton" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                        <Grid Height="90" Name="AlarmOnOffGrid" Width="285">
+                            <Image Height="60" HorizontalAlignment="Center" Margin="23,15,202,15" Name="AlarmClockImage" Source="/AlarmClockWP7;component/Icons/alarm.png" Stretch="Fill" VerticalAlignment="Center" Width="60" />
+                            <TextBlock FontSize="32" HorizontalAlignment="Left" Name="AlarmIsTextBlock" Text="Alarm At:" Width="125" Margin="123,20,0,10" />
+                        </Grid>
+                        <Grid Height="75" Name="TimePickerGrid" Width="220" Margin="0">
+                            <toolkit:TimePicker Name="TimePicker" HorizontalAlignment="Right" Value="07:23:00" IsEnabled="True" Padding="10" Margin="0" FontWeight="Bold" FontSize="32" />
+                            <Image Height="60" HorizontalAlignment="Left" Margin="0,5,0,0" Name="CogImage" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/control_equalizer.png" />
+                        </Grid>
+                        <Grid Height="75" Name="RemoveAlarmGrid" Width="300">
+                            <Button Content="Remove" Height="80" Name="RemoveAlarmButton" Width="220" HorizontalAlignment="Right" DataContext="{Binding}" Margin="0" Padding="0" VerticalAlignment="Stretch" VerticalContentAlignment="Center" />
+                            <Image Height="60" HorizontalAlignment="Left" Margin="12,8,0,0" Name="RemoveAlarmImage" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/control_eject.png" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Audio" Name="AudioPivotItem">
+                <Grid>
+                    <Grid Height="140" HorizontalAlignment="Left" Margin="19,25,0,0" Name="AudibleOnOffGrid" VerticalAlignment="Top" Width="160">
+                        <TextBlock HorizontalAlignment="Center" Margin="20,0,20,110" Name="AudibleIsTextBlock" Text="Audible is:" DataContext="{Binding}" FontSize="26" />
+                        <Image Height="60" HorizontalAlignment="Left" Margin="3,53,0,0" Name="AudibleImage" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/bell.png" />
+                        <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0,40,0,0" Name="AudibleOnOffToggleButton" VerticalAlignment="Top" Width="90" IsThreeState="False" Content="ON" IsEnabled="True" FontSize="24" Padding="10" IsChecked="True" />
+                    </Grid>
+                    <ListBox Height="300" HorizontalAlignment="Left" Margin="20,182,0,0" Name="SoundSelectionListBox" VerticalAlignment="Top" Width="260" FontSize="24" ItemsSource="{Binding}">
+                        <ListBoxItem Content="Alarm Clock" IsSelected="True" FontSize="26" />
+                        <ListBoxItem Content="Car Alarm" FontSize="26" />
+                        <ListBoxItem Content="Evacuate" FontSize="26" />
+                        <ListBoxItem Content="Rooster" FontSize="26" />
+                        <ListBoxItem Content="Tornado Siren" FontSize="26" />
+                    </ListBox>
+                    <Slider Height="240" HorizontalAlignment="Left" Margin="343,32,0,0" Name="VolumeSlider" VerticalAlignment="Top" Width="60" Orientation="Vertical" Maximum="1" SmallChange="0.1" Value="0.5" IsEnabled="True" LargeChange="0.1" />
+                    <Image Height="60" HorizontalAlignment="Left" Margin="267,75,0,0" Name="VolumeImage" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/volume_control_icon.png" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Snooze" Name="SnoozePivotItem">
+                <Grid>
+                    <StackPanel Height="580" HorizontalAlignment="Left" Margin="15,17,0,0" Name="SnoozeStackPanel" VerticalAlignment="Top" Width="430">
+                        <TextBlock Height="50" Name="TextBlock1" Text="Snooze is:" HorizontalAlignment="Center" FontSize="26" />
+                        <Grid Height="100" Name="SnoozeOnOffGrid" Width="160" VerticalAlignment="Stretch">
+                            <Image Height="60" HorizontalAlignment="Left" Margin="0" Name="SnoozeImage" Stretch="Fill" VerticalAlignment="Center" Width="60" Source="/AlarmClockWP7;component/Icons/control%20_off.png" />
+                            <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0" Name="SnoozeToggleButton" VerticalAlignment="Center" Width="90" Content="OFF" Padding="8" IsThreeState="False" />
+                        </Grid>
+                        <TextBlock Height="30" Name="TextBlock2" Text="Snooze Interval:" FontSize="26" HorizontalAlignment="Center" Margin="0,0,0,10" />
+                        <ListBox Height="140" Name="SnoozeIntervalListBox" Width="200" FontSize="26">
+                            <ListBoxItem Content="5" IsSelected="True" />
+                            <ListBoxItem Content="10" FontSize="26" />
+                            <ListBoxItem Content="15" FontSize="26" />
+                            <ListBoxItem Content="20" FontSize="26" />
+                            <ListBoxItem Content="25" FontSize="26" />
+                            <ListBoxItem Content="30" FontSize="26" Margin="0,0,0,20" />
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Repeats" Name="RepeatsPivotItem">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel Height="587" HorizontalAlignment="Left" Margin="15,13,0,0" Name="StackPanel2" VerticalAlignment="Top" Width="436">
+                            <CheckBox Content="Monday" Height="71" Name="MondayCheckBox" FontSize="24" Margin="15,0,0,0" />
+                            <CheckBox Content="Tuesday" Height="71" Name="TuesdayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                            <CheckBox Content="Wednesday" Height="71" Name="WednesdayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                            <CheckBox Content="Thursday" Height="71" Name="ThursdayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                            <CheckBox Content="Friday" Height="71" Name="FridayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                            <CheckBox Content="Saturday" Height="71" Name="SaturdayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                            <CheckBox Content="Sunday" Height="71" Name="SundayCheckBox" Margin="15,0,0,0" FontSize="24" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Visual" DataContext="{Binding}" Name="VisualPivotItem">
+                <Grid>
+                    <Grid Height="120" HorizontalAlignment="Left" Margin="17,39,0,0" Name="VisualGrid" VerticalAlignment="Top" Width="160">
+                        <Image Height="60" HorizontalAlignment="Left" Margin="10,10,0,10" Name="VisualImage" Stretch="Fill" VerticalAlignment="Bottom" Width="60" Source="/AlarmClockWP7;component/Icons/clipboard_text_off.png" />
+                        <TextBlock Height="30" HorizontalAlignment="Center" Margin="0" Name="VisualIsTextBlock" Text="Visual is:" VerticalAlignment="Top" FontSize="24" />
+                        <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0" Name="VisualToggleButton" VerticalAlignment="Bottom" Width="90" FontSize="26" Content="OFF" />
+                    </Grid>
+                    <Grid Height="120" HorizontalAlignment="Left" Margin="235,38,0,0" Name="BlinkGrid" VerticalAlignment="Top" Width="160">
+                        <TextBlock Height="30" HorizontalAlignment="Center" Margin="0" Name="BlinkIsTextBlock" Text="Blink is:" VerticalAlignment="Top" FontSize="24" />
+                        <Image Height="60" HorizontalAlignment="Left" Margin="10,10,0,10" Name="BlinkImage" Stretch="Fill" VerticalAlignment="Bottom" Width="60" Source="/AlarmClockWP7;component/Icons/link_break_off.png" />
+                        <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0" Name="BlinkToggleButton" VerticalAlignment="Bottom" Width="90" Content="OFF" FontSize="26" IsEnabled="True" />
+                    </Grid>
+                    <TextBlock Height="50" HorizontalAlignment="Left" Margin="26,184,0,0" Name="AlarmMessageTextBlock" Text="Alarm Message is:" VerticalAlignment="Top" FontSize="24" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="19,242,0,0" Name="AlarmMessageTextBox" Text="" VerticalAlignment="Top" Width="414" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Vibrate-Flash" Name="VibratePivotItem">
+                <Grid>
+                    <Grid Height="120" HorizontalAlignment="Left" Margin="12,14,0,0" Name="VibrateGrid" VerticalAlignment="Top" Width="160">
+                        <Image Height="60" HorizontalAlignment="Left" Margin="10,0,0,10" Name="VibrateImage" Stretch="Fill" VerticalAlignment="Bottom" Width="60" Source="/AlarmClockWP7;component/Icons/ipod_cast_off.png" />
+                        <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0" Name="VibrateToggleButton" VerticalAlignment="Bottom" Width="90" Content="OFF" FontSize="26" />
+                        <TextBlock Height="50" HorizontalAlignment="Center" Margin="0" Name="VibrateIsTextBlock" Text="Vibrate is:" VerticalAlignment="Top" FontSize="24" />
+                    </Grid>
+                    <Grid Height="120" HorizontalAlignment="Left" Margin="238,15,0,0" Name="FlashGrid" VerticalAlignment="Top" Width="160">
+                        <Image Height="60" HorizontalAlignment="Left" Margin="10,0,0,10" Name="FlashImage" Stretch="Fill" VerticalAlignment="Bottom" Width="60" Source="/AlarmClockWP7;component/Icons/lightbulb_off.png" />
+                        <ToggleButton Height="80" HorizontalAlignment="Right" Margin="0" Name="FlashToggleButton" VerticalAlignment="Bottom" Width="90" Content="OFF" />
+                        <TextBlock Height="30" HorizontalAlignment="Center" Margin="0" Name="FlashlightTextBlock" Text="Flashlight is:" VerticalAlignment="Top" FontSize="24" />
+                    </Grid>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+    
+</phone:PhoneApplicationPage>

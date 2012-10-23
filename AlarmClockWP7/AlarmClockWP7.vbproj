@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FDBCA7EC-DC0A-4EDE-BA48-6E54B11CB637}</ProjectGuid>
+    <ProjectTypeGuids>{DB03555F-0C8B-43BE-9FF9-57896B3C5E56};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>AlarmClockWP7</RootNamespace>
+    <AssemblyName>AlarmClockWP7</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AlarmClockWP7.xap</XapFilename>
+    <SilverlightManifestTemplate>My Project\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AlarmClockWP7.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MyType>Empty</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>Bin\Debug</OutputPath>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>AlarmClockWP7.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>AlarmClockWP7.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604" />
+    <Reference Include="System" />
+    <Reference Include="system.data.linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Xml" />
+    <Import Include="System.Net" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Animation" />
+    <Import Include="System.Windows.Navigation" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="Microsoft.Phone.Controls" />
+    <Import Include="Microsoft.Phone.Shell" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarm.vb" />
+    <Compile Include="AlarmCompare.vb" />
+    <Compile Include="AlarmList.vb" />
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.vb">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="PopupCtrl.xaml.vb">
+      <DependentUpon>PopupCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AlarmServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlarmActive.xaml.vb">
+      <DependentUpon>AlarmActive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlarmsView.xaml.vb">
+      <DependentUpon>AlarmsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmNewView.xaml.vb">
+      <DependentUpon>ConfirmNewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmRemoveView.xaml.vb">
+      <DependentUpon>ConfirmRemoveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailsPivotPage.xaml.vb">
+      <DependentUpon>DetailsPivotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmView.xaml.vb">
+      <DependentUpon>ConfirmView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlarmActive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlarmsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmNewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmRemoveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailsPivotPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\AppManifest.xml" />
+    <None Include="My Project\DataSources\Alarm.datasource" />
+    <None Include="My Project\DataSources\App.datasource" />
+    <None Include="My Project\DataSources\MainPage.datasource" />
+    <None Include="My Project\DataSources\Page1.datasource" />
+    <None Include="My Project\DataSources\Page2.datasource" />
+    <None Include="My Project\DataSources\Page3.datasource" />
+    <None Include="My Project\DataSources\PivotPage1.datasource" />
+    <None Include="My Project\DataSources\PopupCtrl.datasource" />
+    <None Include="My Project\WMAppManifest.xml" />
+    <None Include="Service References\AlarmServiceReference\Alarm.wsdl" />
+    <None Include="Service References\AlarmServiceReference\Alarm.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlarmServiceReference\Alarm1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlarmServiceReference\Alarm2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlarmServiceReference\AlarmClockWP7.AlarmServiceReference.AlarmDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceReference\AlarmClockWP7.UserServiceReference.CreateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceReference\AlarmClockWP7.UserServiceReference.ReturnUserListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceReference\AlarmClockWP7.UserServiceReference.ReturnUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceReference\User.wsdl" />
+    <None Include="Service References\UserServiceReference\User.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\User1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\User2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\User3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlarmServiceReference\Alarm.disco" />
+    <None Include="Service References\AlarmServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AlarmServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AlarmServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Icons\control_eject.png" />
+    <Resource Include="Icons\control_equalizer.png" />
+    <Resource Include="Icons\database.png" />
+    <Resource Include="Icons\volume_control_icon.png" />
+    <None Include="Service References\UserServiceReference\User.disco" />
+    <None Include="Service References\UserServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\UserServiceReference\configuration.svcinfo" />
+    <None Include="Service References\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Resource Include="Icons\alarm.png" />
+    <Resource Include="Icons\attach.png" />
+    <Resource Include="Icons\bell.png" />
+    <Resource Include="Icons\clipboard_text.png" />
+    <Resource Include="Icons\comment.png" />
+    <Resource Include="Icons\control_pause.png" />
+    <Resource Include="Icons\delete.png" />
+    <Resource Include="Icons\error.png" />
+    <Resource Include="Icons\exclamation.png" />
+    <Resource Include="Icons\house.png" />
+    <Resource Include="Icons\ipod_cast.png" />
+    <Resource Include="Icons\lightbulb.png" />
+    <Resource Include="Icons\link_break.png" />
+    <Resource Include="Icons\note.png" />
+    <Resource Include="Icons\shading.png" />
+    <Resource Include="Icons\transmit.png" />
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\cascade.png" />
+    <Resource Include="Icons\wait.png" />
+    <Resource Include="Icons\cancel.png" />
+    <Resource Include="Icons\cog.png" />
+    <Resource Include="Icons\joystick.png" />
+    <Resource Include="Sounds\Alarm_Clock.mp3" />
+    <Resource Include="Icons\bell_off.png" />
+    <Resource Include="Sounds\Car_Alarm.mp3" />
+    <Resource Include="Sounds\Evacuate.mp3" />
+    <Resource Include="Sounds\Rooster.mp3" />
+    <Resource Include="Sounds\Tornado_Siren.mp3" />
+    <Resource Include="Icons\alarm_off.png" />
+    <Resource Include="Icons\ipod_cast_off.png" />
+    <Resource Include="Icons\lightbulb_off.png" />
+    <Resource Include="Icons\link_break_off.png" />
+    <Resource Include="Icons\clipboard_text_off.png" />
+    <Resource Include="Icons\control _off.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AlarmServiceReference\" />
+    <WCFMetadataStorage Include="Service References\UserServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

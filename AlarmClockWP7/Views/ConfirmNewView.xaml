@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AlarmClockWP7.ConfirmNewView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Alarm Clock" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Add Alarm" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="156*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <StackPanel Height="519" HorizontalAlignment="Left" Margin="7,12,0,0" Name="StackPanel1" VerticalAlignment="Top" Width="437">
+                <Grid Height="120" Name="YesGrid" Width="260">
+                    <Button Content="Yes" Height="80" Name="YesButton" Width="175" Click="YesButton_Click" Padding="10" Margin="0" HorizontalAlignment="Right" />
+                    <Image Height="60" Name="SaveYesImage" Stretch="Fill" Width="60" Source="/AlarmClockWP7;component/Icons/database.png" Margin="0" HorizontalAlignment="Left" />
+                </Grid>
+                <Grid Height="120" Name="NoGrid" Width="260">
+                    <Button Content="No" Height="80" HorizontalAlignment="Right" Margin="0" Name="NoButton" VerticalAlignment="Stretch" Width="175" Padding="10" />
+                    <Image Height="60" Name="SaveNoImage" Stretch="Fill" Width="60" Source="/AlarmClockWP7;component/Icons/cancel.png" Margin="0" HorizontalAlignment="Left" />
+                </Grid>
+            </StackPanel>       
+        </Grid>    
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

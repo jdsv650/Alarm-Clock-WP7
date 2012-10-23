@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b5aa980-5760-4d20-84a3-29d278011995" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:37342/Alarm.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Alarm.wsdl" MetadataType="Wsdl" ID="80b68958-de9a-4b70-83f3-d12449996629" SourceId="1" SourceUrl="http://localhost:37342/Alarm.svc?wsdl" />
+    <MetadataFile FileName="Alarm.xsd" MetadataType="Schema" ID="68c38da0-033b-4d66-8ee3-658626cbff15" SourceId="1" SourceUrl="http://localhost:37342/Alarm.svc?xsd=xsd0" />
+    <MetadataFile FileName="Alarm1.xsd" MetadataType="Schema" ID="f102f227-7d4d-434c-a3b9-c98206c98ae8" SourceId="1" SourceUrl="http://localhost:37342/Alarm.svc?xsd=xsd1" />
+    <MetadataFile FileName="Alarm.disco" MetadataType="Disco" ID="ae46b1ae-5236-4e76-89c5-532f396041ef" SourceId="1" SourceUrl="http://localhost:37342/Alarm.svc?disco" />
+    <MetadataFile FileName="Alarm2.xsd" MetadataType="Schema" ID="635c4b73-a8eb-4e71-977d-34e67e7f9073" SourceId="1" SourceUrl="http://localhost:37342/Alarm.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
