@@ -30,9 +30,22 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Height="586" HorizontalAlignment="Left" Margin="12,15,0,0" Name="StackPanel1" VerticalAlignment="Top" Width="438">
                 <Button Content="Snooze" Height="73" Name="SnoozeButton" Width="160" Margin="0,20,0,10" FontSize="28" IsTabStop="False" />
-                <TextBlock Height="30" Name="TextBlock1" Text="Message:" />
-                <TextBlock Height="63" Name="MessageTextBlock" Text="" Margin="0,0,0,20" IsHitTestVisible="False" />
-                <Button Content="Off" Height="71" Name="OffButton" Width="160" FontSize="28" />
+                <TextBlock Height="30" Name="TextBlock1" Text="" />
+                <TextBlock Height="63" Name="MessageTextBlock" Text="" Margin="0,0,0,20" IsHitTestVisible="False" FontSize="32" />
+                <Grid Height="100" Name="Grid1" Width="300">
+                    <Button Content="Off" Height="70" Name="OffButton" Width="140" FontSize="28" Margin="73,16,87,16" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10,0" />
+                    <Image Height="60" Name="Image1" Stretch="Fill" Width="60" Margin="0,0,10,0" HorizontalAlignment="Right" Source="/AlarmClockWP7;component/Icons/cancel.png" VerticalAlignment="Center" />
+                    <Image Height="60" HorizontalAlignment="Left" Margin="10,0,0,0" Name="Image2" Stretch="Fill" VerticalAlignment="Center" Width="60" Source="/AlarmClockWP7;component/Icons/cancel.png" />
+                </Grid>
+                <!-- camera for flash -->
+                <Canvas x:Name="viewfinderCanvas" Width="0" Height="0" 
+                   HorizontalAlignment="Left" >
+                    <!--Camera viewfinder -->
+                    <Canvas.Background>
+                        <VideoBrush x:Name="viewfinderBrush" />
+                    </Canvas.Background>
+                </Canvas>
+                <!-- end camera stuff-->   
             </StackPanel>
         </Grid>
     </Grid>

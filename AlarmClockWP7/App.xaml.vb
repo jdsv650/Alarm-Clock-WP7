@@ -9,11 +9,14 @@ Partial Public Class App
     Public alarmSelected As Integer = 0
     Public name As String = ""
     Public nameIndex As Integer = -1
+    Public alarmActive As Integer = 0
 
     Private _alarmL As AlarmList = New AlarmList
 
     'alist is list of alarms in database
     Public alist As List(Of AlarmDetail) = New List(Of AlarmDetail)
+    Public slist As List(Of String) = New List(Of String)
+
     Public alistOrdered As List(Of AlarmDetail) = New List(Of AlarmDetail)
 
     ' single alarm

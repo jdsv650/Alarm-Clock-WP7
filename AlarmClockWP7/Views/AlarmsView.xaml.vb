@@ -9,6 +9,7 @@ Partial Public Class Page1
         PageTitle.Text = Date.Now.ToShortTimeString
         DateBlock.Text = Date.Now.ToShortDateString
 
+
         Dim timer As DispatcherTimer = New DispatcherTimer
 
         'DispatcherTimer setup
@@ -17,7 +18,10 @@ Partial Public Class Page1
         timer.Start()
 
         AlarmsListBox.ItemsSource = CType(Application.Current, App).alist
-        ' AlarmsListBox.ItemsSource = CType(Application.Current, App).alist
+        ' AlarmNumListBox.ItemsSource = CType(Application.Current, App).alist
+
+        AlarmNumListBox.ItemsSource = CType(Application.Current, App).slist
+
         '  MessageBox.Show("Alist count" + CType(Application.Current, App).alist.Count.ToString)
     End Sub
 
@@ -40,8 +44,9 @@ Partial Public Class Page1
     Private Sub AlarmsListBox_SelectionChanged(sender As System.Object, e As System.Windows.Controls.SelectionChangedEventArgs) Handles AlarmsListBox.SelectionChanged
         'Handle view alarm details 
         ' selectedIndex equals alarm index number 0 - N
-        MessageBox.Show(AlarmsListBox.SelectedIndex)
+
         CType(Application.Current, App).alarmSelected = AlarmsListBox.SelectedIndex
+        ' MessageBox.Show(CType(Application.Current, App).alarmSelected)
 
         If (AlarmsListBox.SelectedIndex <> -1) Then  'Not page back()
             NavigationService.Navigate(New Uri("/Views/DetailsPivotPage.xaml", UriKind.Relative))
@@ -52,6 +57,7 @@ Partial Public Class Page1
         ' Bind listbox item here
         '***************** CType(Application.Current, App).AddRemove = 2 'edit
 
+        AlarmNumListBox.ItemsSource = CType(Application.Current, App).slist
         AlarmsListBox.ItemsSource = CType(Application.Current, App).alist
         AlarmAtBlock.Text = (CType(Application.Current, App).name + " - Alarm at:")
 

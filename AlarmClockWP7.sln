@@ -8,6 +8,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AlarmClockWP7", "AlarmClock
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WcfService1", "WcfService1\WcfService1.vbproj", "{3ACAA637-4686-479D-AB80-18B6333C959D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1238F3AA-C7D0-40F0-A1A7-C5AB609354B4}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

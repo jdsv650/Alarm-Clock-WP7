@@ -14,6 +14,8 @@ Partial Public Class PivotPage1
         If CType(Application.Current, App).AddRemove = 0 Or CType(Application.Current, App).AddRemove = 2 Then  'Edit or Remove
             RemoveAlarmGrid.Visibility = Windows.Visibility.Visible
             'edit
+            ' MessageBox.Show(CType(Application.Current, App).alarmSelected)
+
             If (CType(Application.Current, App).alist.Count > 0) Then
                 'set picker to get currently selected time
                 'TimePicker.Value = CType(Application.Current, App).alarmL._aList(indexSel).AlarmTime.ToShortTimeString
@@ -93,17 +95,15 @@ Partial Public Class PivotPage1
         'Audible alarm on/off
         If AudibleOnOffToggleButton.IsChecked Then
             AudibleOnOffToggleButton.Content = "ON"
-            AudibleImage.Source = New Imaging.BitmapImage(New Uri("/AlarmClockWP7;component/Icons/bell.png", UriKind.Relative))
             VolumeSlider.Value = 0.5
 
-            CType(Application.Current, App).GlobalMediaElement.Play()
+            'Not now***  CType(Application.Current, App).GlobalMediaElement.Play()
 
         Else
             AudibleOnOffToggleButton.Content = "OFF"
-            AudibleImage.Source = New Imaging.BitmapImage(New Uri("/AlarmClockWP7;component/Icons/bell_off.png", UriKind.Relative))
             VolumeSlider.Value = 0
 
-            CType(Application.Current, App).GlobalMediaElement.Stop()
+            'Not Now*** CType(Application.Current, App).GlobalMediaElement.Stop()
         End If
     End Sub
 
@@ -216,8 +216,8 @@ Partial Public Class PivotPage1
             CType(Application.Current, App).AddRemove = 2
         End If
 
-        If CType(Application.Current, App).AddRemove = 2 Then ' Check add or edit
-            ' Save edit  
+        ' Check add or edit
+        If CType(Application.Current, App).AddRemove = 2 Then ' Save edit  
             'Set alarm number*** (CType(Application.Current, App).alist(CType(Application.Current, App).alarmSelected).AlarmNumber)
             CType(Application.Current, App).salarm.AlarmNumber = (CType(Application.Current, App).alist(CType(Application.Current, App).alarmSelected).AlarmNumber)
 
@@ -234,8 +234,8 @@ Partial Public Class PivotPage1
 
             CType(Application.Current, App).salarm.AlarmDateTime = editTString
 
-            MessageBox.Show("Current date =  " + DateTime.Now.ToString)
-            MessageBox.Show("Current alarm date =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
+            '  MessageBox.Show("Current date =  " + DateTime.Now.ToString)
+            ' MessageBox.Show("Current alarm date =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
 
             ' add +1 to day if alarm time < current time and days are equal (for 24hr timer)
             If DateTime.Now.Date = CType(Application.Current, App).salarm.AlarmDateTime.Date And
@@ -252,7 +252,7 @@ Partial Public Class PivotPage1
                 CType(Application.Current, App).salarm.AlarmDateTime = CType(Application.Current, App).salarm.AlarmDateTime.AddDays(-1)
             End If
 
-            MessageBox.Show("Edit alarm datetime =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
+            ' MessageBox.Show("Edit alarm datetime =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
 
             'audio
             CType(Application.Current, App).salarm.AudibleAlarm = AudibleOnOffToggleButton.IsChecked
@@ -314,7 +314,7 @@ Partial Public Class PivotPage1
                 CType(Application.Current, App).salarm.AlarmDateTime = CType(Application.Current, App).salarm.AlarmDateTime.AddDays(1)
             End If
 
-            MessageBox.Show("Adding alarm datetime =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
+            '  MessageBox.Show("Adding alarm datetime =  " + CType(Application.Current, App).salarm.AlarmDateTime.ToString)
 
             'audio
             CType(Application.Current, App).salarm.AudibleAlarm = AudibleOnOffToggleButton.IsChecked

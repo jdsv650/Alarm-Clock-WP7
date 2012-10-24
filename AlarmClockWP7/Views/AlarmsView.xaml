@@ -44,9 +44,34 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Height="565" HorizontalAlignment="Stretch" Margin="0,6,0,0" Name="StackPanel1" VerticalAlignment="Stretch" Width="450">
-                <TextBlock Height="30" Name="AlarmAtBlock" Text="Alarm At:" HorizontalAlignment="Center" />
-                
-               <!--
+                <TextBlock Height="30" Name="AlarmAtBlock" Text="Alarm At:" />
+                <Grid Height="509" Name="Grid1" Width="439">
+                    <ListBox x:Name="AlarmsListBox" Height="400" Width="200" SelectedIndex="-1" Padding="0" Margin="5,25,0,80" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowDrop="False" DataContext="{Binding}" ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding AlarmDateTime, StringFormat=\{0:hh:mm:tt\} }" HorizontalAlignment="Left" FontSize="48" Margin="0,10,0,15" Padding="10,0" />
+                                </StackPanel>
+                                <!-- <StackPanel Orientation="Vertical"> -->
+                                <!-- <ListBoxItem IsSelected="False" HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15" IsEnabled="True" Padding="10,0" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="White"   Content="{Binding AlarmTime, StringFormat=\{0:hh:mm:tt\} }" /> -->
+                                <!--  </StackPanel> -->
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="AlarmNumListBox" Height="400" Width="230" SelectedIndex="-1" Padding="0" Margin="6,25,0,80" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowDrop="False" DataContext="{Binding}" ItemsSource="{Binding}" IsEnabled="True" IsHitTestVisible="True">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}" HorizontalAlignment="Left" FontSize="48" Margin="0,10,0,15" Padding="10,0" />
+                                </StackPanel>
+                                <!-- <StackPanel Orientation="Vertical"> -->
+                                <!-- <ListBoxItem IsSelected="False" HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15" IsEnabled="True" Padding="10,0" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="White"   Content="{Binding AlarmTime, StringFormat=\{0:hh:mm:tt\} }" /> -->
+                                <!--  </StackPanel> -->
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+                <!--
                 <ListBox Height="400" Name="AlarmsListBox" Width="400" SelectedIndex="-1" Padding="0" Margin="0,0,0,10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowDrop="False" DataContext="{Binding}" ItemsSource="{Binding}">
                      Use data context specific to item
                     <ListBoxItem IsSelected="False" HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15" IsEnabled="True" Padding="10,0" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="White" Content="{Binding Source={StaticResource alarmDataSource}, StringFormat=\{0:hh:mm:tt\}, Path=AlarmTime}" DataContext="{Binding}" />
@@ -59,20 +84,6 @@
                <ListBox Height="400" Name="AlarmsListBox" Width="400" SelectedIndex="-1" Padding="0" Margin="0,0,0,10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowDrop="False" >
                  '   <ListBoxItem IsSelected="True" HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15" IsEnabled="True" Padding="10,0" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="White"  Content="{Binding alarm1.AlarmTime}" />
                 '</ListBox> -->
-
-                <ListBox x:Name="AlarmsListBox" Height="400" Width="400" SelectedIndex="-1" Padding="0" Margin="0,0,0,10" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowDrop="False" DataContext="{Binding}" ItemsSource="{Binding}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding AlarmDateTime, StringFormat=\{0:MM/dd/yy hh:mm:tt\} }"   HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15"  Padding="10,0" />
-                            </StackPanel>   
-                            <!-- <StackPanel Orientation="Vertical"> -->
-                               <!-- <ListBoxItem IsSelected="False" HorizontalAlignment="Center" FontSize="48" Margin="0,10,0,15" IsEnabled="True" Padding="10,0" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="White"   Content="{Binding AlarmTime, StringFormat=\{0:hh:mm:tt\} }" /> -->
-                            <!--  </StackPanel> -->
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-             
             </StackPanel>
         </Grid>
     </Grid>

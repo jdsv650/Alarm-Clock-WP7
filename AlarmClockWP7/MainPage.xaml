@@ -41,7 +41,7 @@
                         <Image Height="60" HorizontalAlignment="Left" Margin="0,10,0,0" Name="Image1" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/cascade.png" />
                     </Grid>
                     <TextBlock Height="34" Name="UserTextBlock" Text="Select User:" Width="440" FontSize="22" HorizontalAlignment="Stretch" TextAlignment="Center" />
-                    <ListBox Height="175" HorizontalAlignment="Center" Margin="20,10,0,0" Name="UserListBox" VerticalAlignment="Top" Width="275" ItemsSource="{Binding}" FontSize="40" HorizontalContentAlignment="Center">
+                    <ListBox Height="175" HorizontalAlignment="Center" Margin="20,5,0,0" Name="UserListBox" VerticalAlignment="Top" Width="275" ItemsSource="{Binding}" FontSize="40" HorizontalContentAlignment="Center">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -59,6 +59,7 @@
                         <Button Content="Add Alarm" Height="80" Name="AddAlarmButton" Width="180" Margin="0" HorizontalAlignment="Right" DataContext="{Binding}" />
                         <Image Height="60" HorizontalAlignment="Left" Margin="0,10,0,0" Name="AddAlarmImage" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/AlarmClockWP7;component/Icons/add.png" />
                     </Grid>
+                    <Button Content="Sync Alarms" Height="71" Name="Button1" Width="250" Margin="0,10,0,0" />
                 </StackPanel>
           </ScrollViewer>
         </Grid>

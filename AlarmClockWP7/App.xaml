@@ -7,7 +7,7 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <MediaElement x:Key="AppMediaElement" x:Name="alarmSnd" Volume="1.0" Source="/Sounds/Alarm_Clock.mp3" AutoPlay="True" MediaEnded="repeatMedia" > 
+        <MediaElement x:Key="AppMediaElement" x:Name="alarmSnd" Volume="0.0" Source="/Sounds/Alarm_Clock.mp3" AutoPlay="True" MediaEnded="repeatMedia" > 
         </MediaElement> 
     </Application.Resources>
 
